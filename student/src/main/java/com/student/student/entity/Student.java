@@ -27,5 +27,4 @@ public class Student {
 	@Column(name="country")
 	String country;
 	
-
 }

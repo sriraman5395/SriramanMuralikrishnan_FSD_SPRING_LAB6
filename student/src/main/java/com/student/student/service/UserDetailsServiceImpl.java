@@ -15,13 +15,10 @@ import com.student.student.security.MyUserDetails;
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
-    @Autowired
-    private UserRepository repository;
+	@Autowired
+	private UserRepository repository;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder; // Inject the PasswordEncoder bean
-
-    @Override
+	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		User user = repository.findByUsername(username);
 		if(user == null) {

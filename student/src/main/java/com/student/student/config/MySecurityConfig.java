@@ -17,12 +17,12 @@ import com.student.student.service.UserDetailsServiceImpl;
 
 @Configuration
 public class MySecurityConfig extends WebSecurityConfigurerAdapter{
-	
+
 	@Bean
 	public UserDetailsService getDetailsService() {
 		return new UserDetailsServiceImpl();
 	}
-	
+
 	@Bean
 	public PasswordEncoder getEncoder() {
 		return new BCryptPasswordEncoder();

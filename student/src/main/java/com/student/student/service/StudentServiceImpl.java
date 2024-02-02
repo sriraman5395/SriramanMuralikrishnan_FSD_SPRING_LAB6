@@ -45,5 +45,4 @@ public class StudentServiceImpl implements StudentService {
 		return repository.findById(stuId).orElse(null);
 	}
 	
-
 }

@@ -11,5 +11,4 @@ public interface StudentService {
 	void deleteById(int stuId);
 	Student getById(int stuId);
 	
-
 }

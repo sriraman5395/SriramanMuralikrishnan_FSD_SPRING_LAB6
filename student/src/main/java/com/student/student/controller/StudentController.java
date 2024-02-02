@@ -17,8 +17,8 @@ import com.student.student.service.StudentService;
 @Controller
 @RequestMapping("/students")
 public class StudentController {
-	
-    @Autowired
+
+	@Autowired
 	StudentService service;
 	@GetMapping("/list")
 	public String getAllStudents(Model model) {
