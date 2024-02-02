@@ -22,16 +22,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     private PasswordEncoder passwordEncoder; // Inject the PasswordEncoder bean
 
     @Override
-    public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = repository.findByUsername(username);
-        if (user == null) {
-            throw new UsernameNotFoundException(username);
-        }
-
-        // Encode the password before creating MyUserDetails
-        String encodedPassword = passwordEncoder.encode(user.getPassword());
-        user.setPassword(encodedPassword); // Update the password in the User entity with the encoded password
-
-        return new MyUserDetails(user);
-    }
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		User user = repository.findByUsername(username);
+		if(user == null) {
+			throw new UsernameNotFoundException(username);
+		}
+		return new MyUserDetails(user);
+	}
 }
